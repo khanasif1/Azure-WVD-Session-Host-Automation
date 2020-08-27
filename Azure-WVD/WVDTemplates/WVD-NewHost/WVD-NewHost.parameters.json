@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "Prefix": {
+      "value": "Optimize"
+    },
+    "AdminUserName": {
+      "value": "khanasif1"
+    },
+    "AdminPassword": {
+      "value": "Redhat0!820516"
+    },
+    "DomainFQDN": {
+      "value": "wvdarm.com"
+    },
+    "Instance": {
+      "value": 1
+    },
+    "OperatingSystem": {
+      "value": "Client"
+    },
+    "VMSize": {
+      "value": "Small"
+    },
+    "VnetRgName": {
+      "value": "wvdsession"
+    },
+    "VnetName": {
+      "value": "wvdarm-adVNET"
+    },
+    "SubnetName": {
+      "value": "adSubnet"
+    },
+    "ProfilePath": {
+      "value": "\\\\msazureacademy.com\\CorpShares\\FSLogix"
+    },
+    "RegistrationToken": {
+      "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc4MkNGNDc0MzUwRkU3MkY5M0E2NzczOEFBRjQ0Qzg4QkFFMjI0QUIiLCJ0eXAiOiJKV1QifQ.eyJSZWdpc3RyYXRpb25JZCI6IjE4YmU3Mzc3LTM3YWYtNGFkYS1hNmViLWJlNzI3YzcwZDg4ZSIsIkJyb2tlclVyaSI6Imh0dHBzOi8vcmRicm9rZXItZy11cy1yMC53dmQubWljcm9zb2Z0LmNvbS8iLCJEaWFnbm9zdGljc1VyaSI6Imh0dHBzOi8vcmRkaWFnbm9zdGljcy1nLXVzLXIwLnd2ZC5taWNyb3NvZnQuY29tLyIsIkVuZHBvaW50UG9vbElkIjoiNTNlZGVlZDgtYzIwMy00YTRlLTg2M2MtNGFjZjQwMzE2MmI3IiwiR2xvYmFsQnJva2VyVXJpIjoiaHR0cHM6Ly9yZGJyb2tlci53dmQubWljcm9zb2Z0LmNvbS8iLCJHZW9ncmFwaHkiOiJVUyIsIm5iZiI6MTU5Njc5MDQ2MSwiZXhwIjoxNTk2ODc2ODM2LCJpc3MiOiJSREluZnJhVG9rZW5NYW5hZ2VyIiwiYXVkIjoiUkRtaSJ9.SeQqNrYtjfUY4XoTSaf6PedBwDs2unulidNaTaokFo8qKL6UfIBZseufFMDor6TAN5Cc7G2dU06SiwUxtUFLYVWcU0q8oGLVxofe4mlMkttpDZdgJksAlQfHJ8ZQe0M70E9mmoXDhcyOAi1GmmjMlOKupOdz1Pe4NMzoDylIszkb01Z2SrlgsG3yaHa1iY5oHuEMOT1iFbBa1XCtjowvWkxEPYYV8ENW4096VDMIO0arYTcXn5AGFYrHfzRNZJP85rOfl6wKUMX6UiTOGISGuzdfQP-BgXzraCyNaOsD7Sd57rlxrFBpRJfoHGa4DSVkbXvoVyUGkXyRhNeUttpVCA"
+    },
+    "Optimize": {
+      "value": true
+    },
+    "galleryName": {
+      "value": "SIG_AIB"
+    },
+    "galleryImageDefinitionName": {
+      "value": "SIGDef_AIB"
+    },
+    "galleryImageVersionName": {
+      "value": "0.24386.20118"
+    }
+  }
+}

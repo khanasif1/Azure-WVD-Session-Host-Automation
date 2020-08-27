@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "adminUsername": {
+        "value": "khanasif1"
+      },
+      "adminPassword": {
+        "value": "Redhat0!820516"
+      },
+      "dnsLabelPrefix": {
+        "value": "sigvm"
+      },
+      "galleryName": {
+        "value": "SIG_AIB"
+      },
+      "galleryImageDefinitionName": {
+        "value": "SIGDef_AIB"
+      },
+      "galleryImageVersionName": {
+        "value": "0.24386.20118"
+      },
+      "vmName": {
+        "value": "sig-vm"
+      }
+    }
+  }
