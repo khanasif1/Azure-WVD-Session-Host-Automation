@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "Prefix": {
+      "value": "Optimize"
+    },
+    "AdminUserName": {
+      "value": "khanasif1"
+    },
+    "AdminPassword": {
+      "value": "**"
+    },
+    "DomainFQDN": {
+      "value": "wvdarm.com"
+    },
+    "Instance": {
+      "value": 1
+    },
+    "OperatingSystem": {
+      "value": "Client"
+    },
+    "VMSize": {
+      "value": "Small"
+    },
+    "VnetRgName": {
+      "value": "wvdsession"
+    },
+    "VnetName": {
+      "value": "wvdarm-adVNET"
+    },
+    "SubnetName": {
+      "value": "adSubnet"
+    },
+    "ProfilePath": {
+      "value": "\\\\msazureacademy.com\\CorpShares\\FSLogix"
+    },
+    "RegistrationToken": {
+      "value": "***"
+    },
+    "Optimize": {
+      "value": true
+    },
+    "galleryName": {
+      "value": "SIG_AIB"
+    },
+    "galleryImageDefinitionName": {
+      "value": "SIGDef_AIB"
+    },
+    "galleryImageVersionName": {
+      "value": "0.24386.20118"
+    }
+  }
+}
