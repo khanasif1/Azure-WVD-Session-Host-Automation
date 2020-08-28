@@ -8,10 +8,9 @@ New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName Example
   -Mode Incremental 
 
 
-
-  New-AzResourceGroupDeployment -Name WVDDeployment-SIG -ResourceGroupName wvd-arm-automate `
-  -TemplateFile .\Azure-WVD\WVDTemplates\WVD-NewHost\ARM\WVD-NewHost_V2.json `
-  -TemplateParameterFile .\Azure-WVD\WVDTemplates\WVD-NewHost\ARM\WVD-NewHost.parameters.json `
+New-AzResourceGroupDeployment -Name WVDDeployment-SIG -ResourceGroupName wvd-arm-automate `
+  -TemplateFile .\Azure-WVD\WVDTemplates\WVD-NewHost\ARM\azuredeploy.json `
+  -TemplateParameterFile .\Azure-WVD\WVDTemplates\WVD-NewHost\ARM\azuredeploy.parameters.json `
   -Mode Incremental 
   
 
