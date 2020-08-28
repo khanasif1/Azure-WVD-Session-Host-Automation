@@ -233,7 +233,7 @@ $agent_deploy_status = Start-Process `
 Add-Content -LiteralPath C:\New-WVDSessionHost.log "WVD Agent Install Complete"
 Wait-Event -Timeout 5
 
-
+<#
 #########################
 #    FSLogix Install    #
 #########################
@@ -271,13 +271,6 @@ New-ItemProperty `
     -Value $ProfilePath `
     -PropertyType MultiString `
     -Force
-<#
-New-ItemProperty `
-    -Path HKLM:\SOFTWARE\FSLogix\Profiles `
-    -Name "CCDLocations" `
-    -PropertyType "MultiString" `
-    -Value "type=smb,connectionString=$ProfilePath"
-#>
 Set-ItemProperty `
     -Path HKLM:\Software\FSLogix\Profiles `
     -Name "SizeInMBs" `
@@ -368,13 +361,6 @@ New-ItemProperty `
     -Value $ProfilePath `
     -PropertyType MultiString `
     -Force
-<#
-New-ItemProperty `
-    -Path HKLM:\SOFTWARE\Policies\FSLogix\ODFC `
-    -Name "CCDLocations" `
-    -PropertyType "MultiString" `
-    -Value "type=smb,connectionString=$ProfilePath"
-#>
 New-ItemProperty `
     -Path HKLM:\SOFTWARE\Policies\FSLogix\ODFC `
     -Name "Enabled" `
@@ -482,7 +468,7 @@ else {
     Add-Content -LiteralPath C:\New-WVDSessionHost.log "Optimize NOT selected"    
 }
 
-
+#>
 ##########################
 #    Restart Computer    #
 ##########################
