@@ -113,7 +113,7 @@
   },
   "resources": [
     {
-      "type": "Microsoft.Network/networkInterface",
+      "type": "Microsoft.Network/networkInterfaces",
       "name": "[concat(variables('VMName'),copyIndex(),'-nic')]",
       "apiVersion": "2018-10-01",
       "location": "[resourceGroup().location]",
