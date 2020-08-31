@@ -2,8 +2,8 @@
 
 Install-Module -Name Az.DesktopVirtualization
 
-Connect-AzAccount
-Get-AzSubscription | Out-GridView -PassThru | Select-AzSubscription
+#Connect-AzAccount
+#Get-AzSubscription | Out-GridView -PassThru | Select-AzSubscription
 
 $hostPoolName="wvd-arm-dist-hp1"
 $resourcegroupname="wvd-arm-cross-subs"
