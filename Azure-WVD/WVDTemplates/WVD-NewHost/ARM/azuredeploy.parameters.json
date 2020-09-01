@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "Prefix": {
-      "value": "SIG"
+      "value": "SIG0"
     },
     "AdminUserName": {
       "value": "khanasif1"
