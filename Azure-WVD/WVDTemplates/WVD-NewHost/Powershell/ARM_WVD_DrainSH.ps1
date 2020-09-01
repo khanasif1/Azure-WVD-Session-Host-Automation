@@ -2,12 +2,14 @@
 param(
      [string] $hostPoolName =$(throw "hostPoolName is required.")#= "wvd-arm-dist-hp1",
     ,[string] $resourcegroupname =$(throw "resourcegroupname is required.")#= "wvd-arm-cross-subs"
-    ,[String[]] $current_hp_vm =$(throw "vm array is required.")
+    ,[String] $hp_vm =$(throw "vm array is required.")
 )
-
-$_currenthpvm=$current_hp_vm
+Write-Output "*********Start Drain Script*********"
+Write-Output $hp_vm
+$_currenthpvm=$hp_vm | ConvertFrom-Json
 Write-Output $_currenthpvm.Count
 foreach($sh in $_currenthpvm){
     Write-Output $sh
     #Update-AzWvdSessionHost -ResourceGroupName $resourcegroupname -HostPoolName $hostPoolName -Name $sh -AllowNewSession:$true
 }
+Write-Output "*********End Drain Script*********"

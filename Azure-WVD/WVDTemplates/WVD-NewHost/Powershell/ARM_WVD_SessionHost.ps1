@@ -11,9 +11,7 @@ param(
     ,[string] $FQDN=$(throw "FQDN is required.")#="wvdarm.com"
 )
 
-$hostPoolName="wvd-arm-dist-hp1"     
-, $resourcegroupname="wvd-arm-cross-subs"    
-, $FQDN=".wvdarm.com"
+Write-Output "*********Start Session Host Scan Script*********"
 
 $hostPool=Get-AzWvdHostPool -Name $hostPoolName -ResourceGroupName $resourcegroupname
 $SessionHost=Get-AzWvdSessionHost -HostPoolName $hostPool.Name -ResourceGroupName $resourcegroupname
@@ -29,8 +27,10 @@ foreach($sh in $SessionHost){
     Write-Output $sh.Name.Split("/")[$lastrecordIndex].Replace($FQDN,"")
     $currenthpvm += $sh.Name.Split("/")[$lastrecordIndex].Replace($FQDN,"")
 }
-echo "##vso[task.setvariable variable=current_hp_vm]$currenthpvm"
-
+$currenthpvmjson = $currenthpvm | ConvertTo-Json -Compress
+Write-Output $currenthpvmjson
+echo "##vso[task.setvariable variable=current_hp_vm]$currenthpvmjson"
+Write-Output "*********End Session Host Scan Script*********"
 
 <#Get-AzWvdSessionHost -HostPoolName wvd-arm-dist-hp1 -Name wvd-arm-dist-hp.wvdarm.com -ResourceGroupName wvd-arm-cross-subs
 
