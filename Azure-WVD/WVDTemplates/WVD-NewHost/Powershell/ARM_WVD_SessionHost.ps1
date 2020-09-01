@@ -4,10 +4,13 @@
 
 #Connect-AzAccount
 #Get-AzSubscription | Out-GridView -PassThru | Select-AzSubscription
+param(
+    
+     [string] $hostPoolName=$(throw "-hostPoolName is required.")#="wvd-arm-dist-hp1"     
+    ,[string] $resourcegroupname=$(throw "resourcegroupname is required.")#="wvd-arm-cross-subs"    
+    ,[string] $FQDN=$(throw "FQDN is required.")#="wvdarm.com"
+)
 
-$hostPoolName="wvd-arm-dist-hp1"
-$resourcegroupname="wvd-arm-cross-subs"
-$FQDN="wvdarm.com"
 
 $hostPool=Get-AzWvdHostPool -Name $hostPoolName -ResourceGroupName $resourcegroupname
 $SessionHost=Get-AzWvdSessionHost -HostPoolName $hostPool.Name -ResourceGroupName $resourcegroupname
