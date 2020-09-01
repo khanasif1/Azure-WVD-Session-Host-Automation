@@ -22,10 +22,10 @@ foreach($sh in $SessionHost){
    [int]$splitCount= $splitValues.count
     $lastrecordIndex=$splitCount-1
     
-    Write-Output "VM Name : $sh.Name.Split("/")[$lastrecordIndex].Replace($FQDN,"")"
+    Write-Output $sh.Name.Split("/")[$lastrecordIndex].Replace($FQDN,"")
     $currenthpvm += $sh.Name.Split("/")[$lastrecordIndex].Replace($FQDN,"")
 }
-echo "##vso[task.setvariable variable=current_sh_vm]$currenthpvm"
+echo "##vso[task.setvariable variable=current_hp_vm]$currenthpvm"
 
 
 <#Get-AzWvdSessionHost -HostPoolName wvd-arm-dist-hp1 -Name wvd-arm-dist-hp.wvdarm.com -ResourceGroupName wvd-arm-cross-subs
