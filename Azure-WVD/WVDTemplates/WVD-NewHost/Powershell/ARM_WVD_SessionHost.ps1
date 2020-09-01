@@ -11,6 +11,9 @@ param(
     ,[string] $FQDN=$(throw "FQDN is required.")#="wvdarm.com"
 )
 
+Write-Output $hostPoolName
+Write-Output $resourcegroupname
+Write-Output $FQDN
 
 $hostPool=Get-AzWvdHostPool -Name $hostPoolName -ResourceGroupName $resourcegroupname
 $SessionHost=Get-AzWvdSessionHost -HostPoolName $hostPool.Name -ResourceGroupName $resourcegroupname
