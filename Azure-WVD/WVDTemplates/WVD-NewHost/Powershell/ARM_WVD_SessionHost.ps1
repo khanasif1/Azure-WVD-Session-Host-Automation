@@ -11,6 +11,10 @@ param(
     ,[string] $FQDN=$(throw "FQDN is required.")#="wvdarm.com"
 )
 
+$hostPoolName="wvd-arm-dist-hp1"     
+, $resourcegroupname="wvd-arm-cross-subs"    
+, $FQDN=".wvdarm.com"
+
 $hostPool=Get-AzWvdHostPool -Name $hostPoolName -ResourceGroupName $resourcegroupname
 $SessionHost=Get-AzWvdSessionHost -HostPoolName $hostPool.Name -ResourceGroupName $resourcegroupname
 
