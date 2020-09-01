@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "Prefix": {
-      "value": "WVD-SIG"
+      "value": "SIG"
     },
     "AdminUserName": {
       "value": "khanasif1"
