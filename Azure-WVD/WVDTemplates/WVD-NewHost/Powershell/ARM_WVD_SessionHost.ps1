@@ -17,6 +17,7 @@ $hostPool=Get-AzWvdHostPool -Name $hostPoolName -ResourceGroupName $resourcegrou
 $SessionHost=Get-AzWvdSessionHost -HostPoolName $hostPool.Name -ResourceGroupName $resourcegroupname
 
 $currenthpvm=@()
+$currentshname=@()
 
 foreach($sh in $SessionHost){
     $splitValues = $sh.Name.Split("/")
@@ -25,11 +26,14 @@ foreach($sh in $SessionHost){
     $lastrecordIndex=$splitCount-1
     
     Write-Output $sh.Name.Split("/")[$lastrecordIndex].Replace($FQDN,"")
-    $currenthpvm += $sh.Name.Split("/")[$lastrecordIndex].Replace($FQDN,"")
+    $currentshname+= $sh.Name.Split("/")[$lastrecordIndex]
+    $currenthpvm += $sh.Name.Split("/")[$lastrecordIndex].Replace($FQDN,"")    
 }
 $currenthpvmjson = $currenthpvm | ConvertTo-Json -Compress
+$currentshnamejson = $currentshname | ConvertTo-Json -Compress
 Write-Output $currenthpvmjson
 echo "##vso[task.setvariable variable=current_hp_vm]$currenthpvmjson"
+echo "##vso[task.setvariable variable=current_sh_name]$currentshnamejson"
 Write-Output "*********End Session Host Scan Script*********"
 
 <#Get-AzWvdSessionHost -HostPoolName wvd-arm-dist-hp1 -Name wvd-arm-dist-hp.wvdarm.com -ResourceGroupName wvd-arm-cross-subs
