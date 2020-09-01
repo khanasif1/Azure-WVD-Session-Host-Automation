@@ -11,8 +11,9 @@ Write-Output $sh_name
 $_currenthpvm=$hp_vm | ConvertFrom-Json
 $_sh_name = $sh_name | ConvertFrom-Json
 Write-Output $_currenthpvm.Count
+Write-Output $_sh_name.Count
 foreach($sh in $_sh_name){
     Write-Output $sh
-    Update-AzWvdSessionHost -ResourceGroupName $resourcegroupname -HostPoolName $hostPoolName -Name $sh -AllowNewSession:$true
+    Update-AzWvdSessionHost -ResourceGroupName $resourcegroupname -HostPoolName $hostPoolName -Name $sh -AllowNewSession:$false
 }
 Write-Output "*********End Drain Script*********"
