@@ -32,6 +32,7 @@ foreach($sh in $SessionHost){
 $currenthpvmjson = $currenthpvm | ConvertTo-Json -Compress
 $currentshnamejson = $currentshname | ConvertTo-Json -Compress
 Write-Output $currenthpvmjson
+Write-Output $currentshnamejson
 echo "##vso[task.setvariable variable=current_hp_vm]$currenthpvmjson"
 echo "##vso[task.setvariable variable=current_sh_name]$currentshnamejson"
 Write-Output "*********End Session Host Scan Script*********"
