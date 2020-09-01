@@ -1,6 +1,6 @@
 ﻿#https://docs.microsoft.com/en-us/powershell/module/az.desktopvirtualization/update-azwvdsessionhost?view=azps-4.6.1
 
-Install-Module -Name Az.DesktopVirtualization
+#Install-Module -Name Az.DesktopVirtualization
 
 #Connect-AzAccount
 #Get-AzSubscription | Out-GridView -PassThru | Select-AzSubscription
