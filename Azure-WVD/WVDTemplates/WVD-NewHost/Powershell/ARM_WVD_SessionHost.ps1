@@ -11,10 +11,6 @@ param(
     ,[string] $FQDN=$(throw "FQDN is required.")#="wvdarm.com"
 )
 
-Write-Output $hostPoolName
-Write-Output $resourcegroupname
-Write-Output $FQDN
-
 $hostPool=Get-AzWvdHostPool -Name $hostPoolName -ResourceGroupName $resourcegroupname
 $SessionHost=Get-AzWvdSessionHost -HostPoolName $hostPool.Name -ResourceGroupName $resourcegroupname
 
@@ -26,7 +22,7 @@ foreach($sh in $SessionHost){
    [int]$splitCount= $splitValues.count
     $lastrecordIndex=$splitCount-1
     
-    Write-Output $sh.Name.Split("/")[$lastrecordIndex].Replace($FQDN,"")
+    Write-Output "VM Name : $sh.Name.Split("/")[$lastrecordIndex].Replace($FQDN,"")"
     $currenthpvm += $sh.Name.Split("/")[$lastrecordIndex].Replace($FQDN,"")
 }
 echo "##vso[task.setvariable variable=current_sh_vm]$currenthpvm"
