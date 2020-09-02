@@ -6,10 +6,16 @@
       "type": "string",
       "defaultValue": "wvd"
     },
-    "AdminUserName": {
+    "VMUserName": {
       "type": "string"
     },
-    "AdminPassword": {
+    "VMPassword": {
+      "type": "securestring"
+    },
+    "DomainUserName": {
+      "type": "string"
+    },
+    "DomainPassword": {
       "type": "securestring"
     },
     "DomainFQDN": {
@@ -103,7 +109,7 @@
     },
     "VMName": "[concat(parameters('Prefix'),'-VM')]",
     "subnetRef": "[concat(subscription().id,'/resourceGroups/',parameters('VnetRgName'),'/providers/Microsoft.Network/virtualNetworks/', parameters('VnetName'),'/subnets/', parameters('subnetName'))]",
-    "JoinUser": "[concat(parameters('adminUsername'),'@',parameters('DomainFQDN'))]",
+    "JoinUser": "[concat(parameters('DomainUserName'),'@',parameters('DomainFQDN'))]",
     "fileUris": "https://raw.githubusercontent.com/khanasif1/Azure-WVD-Session-Host-Automation/master/Azure-WVD/WVDTemplates/WVD-NewHost/Powershell/New-WVDSessionHost.ps1",
     "UriFileNamePieces": "[split(variables('fileUris'), '/')]",
     "firstFileNameString": "[variables('UriFileNamePieces')[sub(length(variables('UriFileNamePieces')), 1)]]",
@@ -158,8 +164,8 @@
         },
         "osProfile": {
           "computerName": "[concat(variables('VMName'),copyIndex())]",
-          "adminUsername": "[parameters('AdminUserName')]",
-          "adminPassword": "[parameters('AdminPassword')]"
+          "adminUsername": "[parameters('VMUserName')]",
+          "adminPassword": "[parameters('VMPassword')]"
         },
         "storageProfile": {
           "imageReference": {
@@ -203,7 +209,7 @@
           "Options": "3"
         },
         "protectedSettings": {
-          "Password": "[parameters('adminPassword')]"
+          "Password": "[parameters('DomainPassword')]"
         }
       },
       "dependsOn": [
