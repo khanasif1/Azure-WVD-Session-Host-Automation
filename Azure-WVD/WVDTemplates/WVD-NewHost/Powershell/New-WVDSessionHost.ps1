@@ -423,7 +423,7 @@ New-ItemProperty `
     -Value 1
 Pop-Location
 
-
+#>
 ##############################################
 #    WVD Optimizer (Virtual Desktop Team)    #
 ##############################################
@@ -468,7 +468,7 @@ else {
     Add-Content -LiteralPath C:\New-WVDSessionHost.log "Optimize NOT selected"    
 }
 
-#>
+
 ##########################
 #    Restart Computer    #
 ##########################

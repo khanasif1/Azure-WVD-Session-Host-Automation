@@ -1,9 +1,11 @@
 ﻿#https://docs.microsoft.com/en-us/powershell/module/az.desktopvirtualization/update-azwvdsessionhost?view=azps-4.6.1
 
 #Install-Module -Name Az.DesktopVirtualization
+#Get-InstalledModule -Name AzureRM -AllVersions
 
 #Connect-AzAccount
 #Get-AzSubscription | Out-GridView -PassThru | Select-AzSubscription
+#Disconnect-AzAccount
 param(
     
      [string] $hostPoolName=$(throw "-hostPoolName is required.")#="wvd-arm-dist-hp1"     
