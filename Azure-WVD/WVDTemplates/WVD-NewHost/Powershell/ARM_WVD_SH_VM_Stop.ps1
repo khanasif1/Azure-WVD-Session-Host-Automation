@@ -10,7 +10,7 @@ param(
 
 Write-Output "*********Start Stop VM Script*********"
 #$stop_sh = '["SIG-VM0"]'
-$resourcegroupname = "wvd-arm-automate"
+#$resourcegroupname = "wvd-arm-automate"
 #$sh_name = '["SIG1-VM0.wvdarm.com","SIG0-VM0.wvdarm.com"]'
 $_shtostop=$stop_sh | ConvertFrom-Json
 

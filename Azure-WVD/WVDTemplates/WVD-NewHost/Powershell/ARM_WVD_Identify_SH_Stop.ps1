@@ -11,7 +11,9 @@ Write-Output "*********Start VM to Stop Script*********"
 #$sh_name = '["SIG1-VM0.wvdarm.com","SIG0-VM0.wvdarm.com"]'
 $_currenthpvm=$hp_vm | ConvertFrom-Json
 $_sh_name = $sh_name | ConvertFrom-Json
+Write-Output $_currenthpvm
 Write-Output $_currenthpvm.Count
+Write-Output $_sh_name
 Write-Output $_sh_name.Count
 
 $stopvmlist=@()
