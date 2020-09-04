@@ -39,10 +39,10 @@ echo "##vso[task.setvariable variable=current_hp_vm]$currenthpvmjson"
 echo "##vso[task.setvariable variable=current_sh_name]$currentshnamejson"
 Write-Output "*********End Session Host Scan Script*********"
 
-<#Get-AzWvdSessionHost -HostPoolName wvd-arm-dist-hp1 -Name wvd-arm-dist-hp.wvdarm.com -ResourceGroupName wvd-arm-cross-subs
+<#Get-AzWvdSessionHost -HostPoolName wvd-arm-dist-hp1 -Name SIG-VM0.wvdarm.com -ResourceGroupName wvd-arm-cross-subs
 
-Get-AzWvdUserSession -ResourceGroupName wvd-arm-cross-subs -HostPoolName wvd-arm-dist-hp1 -SessionHostName wvd-arm-dist-hp.wvdarm.com
+Get-AzWvdUserSession -ResourceGroupName wvd-arm-cross-subs -HostPoolName wvd-arm-dist-hp1 -SessionHostName SIG-VM0.wvdarm.com
 
 Get-AzWvdUserSession -ResourceGroupName wvd-arm-cross-subs -HostPoolName wvd-arm-dist-hp1 
-#Update-AzWvdSessionHost -ResourceGroupName wvd-arm-cross-subs -HostPoolName wvd-arm-dist-hp1 -Name wvd-arm-dist-hp.wvdarm.com -AllowNewSession:$true
+#Update-AzWvdSessionHost -ResourceGroupName wvd-arm-cross-subs -HostPoolName wvd-arm-dist-hp1 -Name SIG-VM0.wvdarm.com -AllowNewSession:$true
 #>
