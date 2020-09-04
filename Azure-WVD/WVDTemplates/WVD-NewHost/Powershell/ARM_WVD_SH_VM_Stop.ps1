@@ -12,8 +12,9 @@ Write-Output "*********Start Stop VM Script*********"
 #$stop_sh = '["SIG-VM0"]'
 #$resourcegroupname = "wvd-arm-automate"
 #$sh_name = '["SIG1-VM0.wvdarm.com","SIG0-VM0.wvdarm.com"]'
+Write-Output $stop_sh
 $_shtostop=$stop_sh | ConvertFrom-Json
-
+Write-Output $_shtostop
 Write-Output $_shtostop.Count
 
 foreach($vm in $_shtostop){  
