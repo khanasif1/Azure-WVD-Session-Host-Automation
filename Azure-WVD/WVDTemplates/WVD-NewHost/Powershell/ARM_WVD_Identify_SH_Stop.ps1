@@ -17,7 +17,7 @@ Write-Output "*********Start VM to Stop Script*********"
 ,$resourcegroupname ="wvd-arm-cross-subs"
 ,$fqdn =".wvdarm.com"#>
 
-$SessionHost=Get-AzWvdSessionHost -HostPoolName $hostPool.Name -ResourceGroupName $resourcegroupname
+$SessionHost=Get-AzWvdSessionHost -HostPoolName $hostPoolName -ResourceGroupName $resourcegroupname
 
 $stopvmlist=@()
 foreach($sh in $SessionHost){
