@@ -233,7 +233,6 @@ $agent_deploy_status = Start-Process `
 Add-Content -LiteralPath C:\New-WVDSessionHost.log "WVD Agent Install Complete"
 Wait-Event -Timeout 5
 
-<#
 #########################
 #    FSLogix Install    #
 #########################
@@ -423,7 +422,6 @@ New-ItemProperty `
     -Value 1
 Pop-Location
 
-#>
 ##############################################
 #    WVD Optimizer (Virtual Desktop Team)    #
 ##############################################
